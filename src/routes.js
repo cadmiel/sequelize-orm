@@ -9,7 +9,8 @@ router.get('/users', userController.index)
 router.post('/users', userController.store)
 router.get('/users/:user_id/adresses', adressController.index)
 router.post('/users/:user_id/adresses', adressController.store)
-router.get('/techs', techController.index)
-router.post('/techs', techController.store)
+router.get('/users/:user_id/techs', techController.index)
+router.post('/users/:user_id/techs', techController.store)
+router.delete('/users/:user_id/techs', techController.delete)
 
 module.exports = router
