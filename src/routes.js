@@ -1,7 +1,15 @@
 const express = require('express')
-const router = express.Router()
-const userController = require('./controllers/userController')
+const userController = require('./controllers/UserController')
+const adressController = require('./controllers/AdressesController')
+const techController = require('./controllers/TechController')
 
-router.post('/users',userController.store)
+const router = express.Router()
+
+router.get('/users', userController.index)
+router.post('/users', userController.store)
+router.get('/users/:user_id/adresses', adressController.index)
+router.post('/users/:user_id/adresses', adressController.store)
+router.get('/techs', techController.index)
+router.post('/techs', techController.store)
 
 module.exports = router
